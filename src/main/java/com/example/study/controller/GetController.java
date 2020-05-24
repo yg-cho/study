@@ -21,6 +21,7 @@ public class GetController {
         return id+pwd;
     }
 
+
     //localhost:8080/api/getMultiParameter?account=abcd&email=study@gmail.com&page=10
     @GetMapping("/getMultiParameter")
     public SearchParam getMultiParameter(SearchParam searchParam){
