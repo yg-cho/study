@@ -11,7 +11,7 @@ public class PostController {
     // ajax 검색
     // http post body -> data
     // json, xml, multipart-form / text-plain
-    //20200528 다시세팅 & MAC 세팅시작
+    //20200529 다시세팅(하드고장남) & MAC 세팅시작
 
     //post http://localhost:8080/api/postMethod
     @PostMapping(value = "/postMethod")
