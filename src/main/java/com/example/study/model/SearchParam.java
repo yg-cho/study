@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 //200529 Lombok 추가
+//맥북에서 세팅
 @Data
 @AllArgsConstructor
 
