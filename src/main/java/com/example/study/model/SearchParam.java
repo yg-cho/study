@@ -8,7 +8,9 @@ import lombok.Data;
 //맥북에서 세팅
 @Data
 @AllArgsConstructor
+
 public class SearchParam {
+
     private String account;
     private String email;
     private int page;
