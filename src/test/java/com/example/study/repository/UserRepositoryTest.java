@@ -2,6 +2,7 @@ package com.example.study.repository;
 
 
 import com.example.study.StudyApplicationTests;
+import com.example.study.model.entity.Item;
 import com.example.study.repository.UserRepository;
 import com.example.study.repository.UserRepositoryTest;
 import com.example.study.StudyApplication;
@@ -29,7 +30,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
         //Single tone Pattern
         User user = new User();
         user.setAccount("TestUser03");
-        user.setEmail("TestUser02@gmail.com");
+        user.setEmail("TestUser03@gmail.com");
         user.setPhoneNumber("010-1111-1111");
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy("TestUser03");
@@ -40,13 +41,16 @@ public class UserRepositoryTest extends StudyApplicationTests {
     }
 
     @Test
+    @Transactional
     public void read(){
-        Optional<User> user = userRepository.findById(1L);
+        //finById 의 쿼리문
+        //select * from user where id = ?
+        Optional<User> user = userRepository.findByAccount("TestUser03");
 
-        user.ifPresent(selectUser -> {
-            System.out.println("user : " +selectUser);
-            System.out.println("email : "+ selectUser.getEmail());
-        });
+        user.ifPresent(selectUser -> selectUser.getOrderDetailList().forEach(detail -> {
+            Item item = detail.getItem();
+            System.out.println(detail.getItem());
+        }));
     }
 
     @Test
@@ -69,9 +73,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
         Optional<User> user = userRepository.findById(2L);
         //org.junit (DI 설정 필요)
         Assert.assertTrue(user.isPresent()); //true
-        user.ifPresent(selectUser -> {
-            userRepository.delete(selectUser);
-        });
+        user.ifPresent(selectUser -> userRepository.delete(selectUser));
 
         Optional<User> deleteUser = userRepository.findById(2L);
 
