@@ -14,25 +14,37 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
-public class Partner {
+
+public class AdminUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String status;
-    private String address;
-    private String callCenter;
-    private String partner_number;
-    private String business_number;
-    private String ceoName;
-    private LocalDateTime registeredAt;
-    private LocalDateTime unregisteredAt;
-    private LocalDateTime createdAt;
-    private String createdBy;
-    private LocalDateTime updatedAt;
-    private String updatedBy;
-    private Long categoryId;
 
+    private String account;
+
+    private String password;
+
+    private String status;
+
+    private String role;
+
+    private LocalDateTime lastLoginAt;
+
+    private LocalDateTime passwordUpdatedAt;
+
+    private int loginFailCount;
+
+    private LocalDateTime registeredAt;
+
+    private LocalDateTime unregisteredAt;
+
+    private LocalDateTime createdAt;
+
+    private String createdBy;
+
+    private LocalDateTime updatedAt;
+
+    private String updatedBy;
 
 }
