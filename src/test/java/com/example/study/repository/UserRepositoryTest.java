@@ -55,7 +55,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void update(){
-        Optional<User> user = userRepository.findByID(1L);
+        Optional<User> user = userRepository.findById(1L);
 
         user.ifPresent(selectUser -> {
             selectUser.setAccount("AAAA");
