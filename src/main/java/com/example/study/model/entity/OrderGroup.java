@@ -3,35 +3,44 @@ package com.example.study.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-<<<<<<< HEAD
 import org.hibernate.annotations.GeneratorType;
-=======
->>>>>>> origin/master
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-<<<<<<< HEAD
-public class Category {
 
-=======
+public class OrderGroup {
 
-public class Category {
->>>>>>> origin/master
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String type;
+    private String status;
 
-    private String title;
+    private String orderType; // 주문의 형태 -일괄 , 개별
+
+    private String revAddress;
+
+    private String revName;
+
+    private String paymentType; //카드 , 현금결제
+
+    private BigDecimal totalPrice;
+
+    private Integer totalQuantity;
+
+    private LocalDateTime order_at;
+
+    private LocalDateTime arrivalDate;
 
     private LocalDateTime createdAt;
 
@@ -40,9 +49,4 @@ public class Category {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/master
 }

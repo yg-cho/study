@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 public class Partner {
+<<<<<<< HEAD
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -23,6 +24,18 @@ public class Partner {
     private String callCenter;
     private String partnerNumber;
     private String businessNumber;
+=======
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String status;
+    private String address;
+    private String callCenter;
+    private String partner_number;
+    private String business_number;
+>>>>>>> origin/master
     private String ceoName;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
@@ -30,4 +43,10 @@ public class Partner {
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
+<<<<<<< HEAD
+=======
+    private Long categoryId;
+
+
+>>>>>>> origin/master
 }

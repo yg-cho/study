@@ -19,14 +19,24 @@ public class User {
 
     //@Column(name="account") <- DB와 Column명이 같다면 생략 가능
     private String account;
-    private String phoneNumber;
-    private String email;
-    private LocalDateTime createdAt;
-    private String createdBy;
-    private LocalDateTime updatedAt;
-    private String updatedBy;
 
-    // 1 : N
-    @OneToMany(fetch = FetchType.LAZY , mappedBy = "user")
-    private List<OrderDetail> orderDetailList;
+    private String password;
+
+    private String status;
+
+    private String phoneNumber;
+
+    private String email;
+
+    private LocalDateTime registeredAt;
+
+    private LocalDateTime unregisteredAt;
+
+    private LocalDateTime createdAt;
+
+    private String createdBy;
+
+    private LocalDateTime updatedAt;
+
+    private String updatedBy;
 }
