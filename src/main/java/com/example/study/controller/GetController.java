@@ -2,6 +2,7 @@ package com.example.study.controller;
 
 
 import com.example.study.model.SearchParam;
+import com.example.study.model.network.Header;
 import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,4 +34,11 @@ public class GetController {
         // { "account" : "", "email" : "", "page" : 0} <-- json 형태
         return searchParam;
     }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+        //{"resultCode" : "OK", "description" : "ok"};
+        return Header.builder().resultCode("OK").description("OK").build();
+    }
+
 }
