@@ -1,0 +1,32 @@
+package com.example.study.controller.api;
+
+import com.example.study.controller.CrudController;
+import com.example.study.ifs.CrudInterface;
+import com.example.study.model.network.Header;
+import com.example.study.model.network.request.UserApiRequest;
+import com.example.study.model.network.response.UserApiResponse;
+import com.example.study.service.UserApiLogicService;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.PostConstruct;
+
+@Slf4j
+@RestController
+@RequestMapping("/api/user")
+public class UserApiController extends CrudController<UserApiRequest, UserApiResponse> {
+
+    @Autowired
+    private UserApiLogicService userApiLogicService;
+//전체적인 Generic 타입
+
+    @PostConstruct
+    public void init(){
+        this.baseService = userApiLogicService;
+    }
+}
+
